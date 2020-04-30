@@ -38,7 +38,7 @@ function newTodo(e) {
 
     TODO_CHECKBOX.type ="checkbox";
     // Add claas Name to button element
-    // TODO_CHECKBOX.className = "btn btn-danger btn-sm float-right delete"
+    TODO_CHECKBOX.className = "check done"
     
     // TODO_CHECKBOX.appendChild(document.createTextNode());
     li.appendChild(TODO_CHECKBOX);
@@ -49,3 +49,15 @@ function newTodo(e) {
 
 }
 
+function checkedList(e)
+{
+  if(e.target.classList.contains('check'))
+  {
+    if(confirm("Are you sure you done with this task?") )
+    {
+      
+      let li = e.target.parentElement;
+      li.style.textDecoration = 'line-through';
+    }
+  }
+}
